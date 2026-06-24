@@ -30,16 +30,41 @@ This also doubles as a test of the **Paotie Agentic OS client-mockup workflow** 
 
 ## Visual direction
 
-- **Palette: gold-forward.** Her favorite color. Brushed-gold / champagne accents on a clean dark or cream base — not garish, not glitter. Classy.
+- **Palette (updated after photo intake):**
+  - Primary: gold / champagne (her favorite color)
+  - Secondary: Aperol-spritz orange (callback to her party theme)
+  - Tertiary: cream / off-white
+  - Accent: deep base — espresso brown or muted forest green (Oakley's coat + her sweater)
+  - Avoid: Vegas-gold glitter, pure black, cool-tone, corporate
 - **Type:** Elegant serif for body / headlines; playful display font reserved for easter-egg breadcrumbs and the final reveal.
+- **Match her aesthetic:** Warm-toned, natural-light, candid. Don't over-style.
 - **No AI-slop tells.** No purple-to-blue gradient hero. No icon-grid-of-three generic features. No "Get Started Today" CTA. Specific, named, real.
 
 ## About Kristen
 
 - 5-year friend of Paotie's; they work together at a restaurant
 - Top-notch server — great at her job, great smile, always friendly, great sense of humor
-- Adores her puppy (name + breed TBD — Researcher: see if @kristen.veretto IG gives anything; otherwise flag for Paotie to drop)
-- Has talked about monetizing the puppy — hence the mockup-brand-site angle
+- **Just turned 26** (gold "26" balloons at the party)
+- **Recent birthday party theme: "Just a Spritz Older"** — Aperol Spritz aesthetic, gold + orange + cream, custom Spritz Bar setup. The site should echo this — she will catch the callback instantly.
+- **Puppy is named Oakley** — Pomsky / mini husky, brown-and-white coat, striking blue eyes
+- Has talked about monetizing Oakley — hence the mockup-brand-site angle
+- Family-close — photos with her grandma, mom, and a sibling
+- Colorado outdoorsy lifestyle — sunflower farms, pine forests, natural light
+- IG aesthetic: warm-toned, candid, curated-but-not-overproduced
+
+## Easter-egg raw material (strongest hooks to draw from)
+
+Builder + Researcher should pick 3–4 of these — not all. Quality over density.
+
+- **The number 26** hidden subtly in the layout (her age) — could be a price, a quantity, a coordinate
+- **Aperol Spritz** glass or bottle as a click/hover target — fizz animation, fill animation, etc.
+- **Oakley's eye/nose** as a click target — Pomsky portrait reveals a secret panel
+- **"Just a Spritz Older"** as a tiny footnote or hidden text reveal
+- **Gold "BIRTHDAY QUEEN" sash** echo in the navigation or as a cursor effect
+- **A sunflower** that reveals a clue when picked / hovered
+- **Konami code** or typing "OAKLEY" anywhere on the page unlocks the final reveal early
+
+The final reveal should still feel earned — 3–4 clues, not a single click-to-win.
 
 ## Stack
 
@@ -51,8 +76,11 @@ This also doubles as a test of the **Paotie Agentic OS client-mockup workflow** 
 
 ## Assets
 
-- Paotie will provide 2–3 photos of Kristen (and ideally the puppy) — landing in `/assets/` when delivered
-- Until photos arrive, use tasteful CSS-only placeholders (gold gradient blocks with shimmer, framed silhouette, etc.)
+- **6 photos delivered by Paotie on 2026-06-24** — see `/assets/CAPTIONS.md` for descriptions + per-photo best-use guidance
+- Hero candidate: `01-birthday-queen.jpg` (her in the BIRTHDAY QUEEN sash under the gold Spritz banner)
+- Oakley shot: `02-oakley.jpg`
+- Real "26" balloons + Spritz Bar moment: `03-spritz-bar.jpg`
+- Use 3–4 photos in the build; not all 6 need to land on the page
 
 ## Acceptance criteria
 

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oakley • The Pomsky • Official Site</title>
+<meta name="description" content="Official brand home of Oakley the Pomsky — Colorado's most charismatic mini-husky.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C5A26F;
+  --spritz: #E07B3D;
+  --cream: #F8F4EC;
+  --espresso: #3C2F2F;
+  --forest: #4A5C3F;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Georgia, serif; background: var(--cream); color: var(--espresso); line-height: 1.6; }
+h1, h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--spritz); outline-offset: 3px; border-radius: 4px; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.back-strip {
+  background: var(--espresso);
+  color: var(--cream);
+  text-align: center;
+  padding: 10px 20px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
+}
+.back-strip a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); padding-bottom: 1px; }
+.back-strip a:hover { color: var(--spritz); }
+
+nav { position: sticky; top: 0; background: rgba(248, 244, 236, 0.96); backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid rgba(197, 162, 111, 0.3); }
+nav .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; max-width: 1100px; margin: 0 auto; }
+.logo { font-size: 1.4rem; color: var(--gold); font-weight: 700; letter-spacing: 1px; font-family: 'Playfair Display', Georgia, serif; }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a { color: var(--espresso); text-decoration: none; font-size: 0.95rem; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+
+section { padding: 100px 0 80px; }
+
+.hero { background: linear-gradient(135deg, #F8F4EC 0%, #EDE4D3 100%); position: relative; overflow: hidden; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; min-height: 580px; }
+.hero-text h1 { font-size: 3.8rem; line-height: 1.05; margin-bottom: 22px; color: var(--espresso); }
+.tag { display: inline-block; background: var(--gold); color: white; padding: 6px 18px; font-size: 0.8rem; border-radius: 999px; margin-bottom: 18px; letter-spacing: 1px; font-family: Georgia, serif; }
+.hero-text p { font-size: 1.15rem; max-width: 420px; color: #5C5248; margin-bottom: 36px; }
+.cta { background: var(--spritz); color: white; padding: 14px 38px; font-size: 1rem; border: none; border-radius: 999px; cursor: pointer; font-weight: 700; transition: all .2s; font-family: Georgia, serif; }
+.cta:hover { background: #C96A30; transform: translateY(-1px); }
+.hero-img img { width: 100%; max-width: 480px; border-radius: 24px; box-shadow: 0 30px 70px rgba(60, 47, 47, 0.18); }
+
+#meet { background: white; }
+.section-head { max-width: 620px; margin-bottom: 50px; }
+.badge { font-size: 0.7rem; padding: 3px 12px; background: var(--gold); color: white; border-radius: 999px; display: inline-block; margin-bottom: 14px; letter-spacing: 0.15em; font-weight: 700; }
+.badge.forest { background: var(--forest); }
+.section-head h2 { font-size: 2.5rem; margin-bottom: 16px; }
+.section-head p { font-size: 1.05rem; color: #5C5248; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+.card { background: var(--cream); border-radius: 20px; overflow: hidden; border: 1px solid rgba(197, 162, 111, 0.2); transition: transform .3s, box-shadow .3s; }
+.card:hover { transform: translateY(-8px); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08); }
+.card img { width: 100%; height: 280px; object-fit: cover; }
+.card-content { padding: 26px; }
+.card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem; margin-bottom: 8px; color: var(--espresso); }
+.card p { color: #6B5F54; font-size: 0.95rem; }
+
+.adventures { background: #F1EDE3; }
+
+#merch { background: white; }
+.merch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.merch-item { background: var(--cream); padding: 32px; border-radius: 18px; text-align: center; border: 1px solid rgba(197, 162, 111, 0.18); }
+.merch-item .emoji { font-size: 2.6rem; margin-bottom: 14px; }
+.merch-item h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; margin-bottom: 6px; }
+.merch-item .price { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
+.merch-item p { font-size: 0.85rem; margin-top: 8px; color: #6B5F54; }
+.merch-item .cta { margin-top: 18px; padding: 10px 26px; font-size: 0.9rem; }
+
+#sponsor { background: var(--cream); }
+.sponsor-inner { text-align: center; max-width: 620px; margin: 0 auto; }
+.sponsor-inner p { color: #5C5248; }
+.partners-line { margin-top: 50px; font-size: 0.85rem; color: #8A7C6D; font-style: italic; }
+
+footer { background: var(--espresso); color: #C5B8A8; padding: 56px 0 36px; font-size: 0.9rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
+.footer-col h4 { color: white; margin-bottom: 14px; font-size: 1rem; font-family: 'Playfair Display', Georgia, serif; }
+.footer-col .line { opacity: 0.75; margin-bottom: 6px; }
+.footer-disclaimer { margin-top: 60px; text-align: center; font-size: 0.78rem; opacity: 0.55; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); }
+
+@media (max-width: 720px) {
+  nav .nav-inner { padding: 14px 20px; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: 0.85rem; }
+  section { padding: 60px 0 50px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; min-height: auto; padding: 24px 0; text-align: center; }
+  .hero-text h1 { font-size: 2.5rem; }
+  .hero-text p { margin-left: auto; margin-right: auto; }
+  .hero-img img { max-width: 360px; margin: 0 auto; display: block; }
+  .section-head h2 { font-size: 1.9rem; }
+  .card img { height: 240px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+  .footer-disclaimer { margin-top: 36px; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-strip">
+  <a href="index.html">← back to the birthday card</a>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">OAKLEY</div>
+    <div class="nav-links">
+      <a href="#meet">Meet</a>
+      <a href="#adventures">Adventures</a>
+      <a href="#merch">Merch</a>
+      <a href="#sponsor">Sponsorships</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="tag">EST 2025 • COLORADO</span>
+      <h1>Oakley.<br>The Pomsky.</h1>
+      <p>Official brand home of the world's most charismatic mini-husky. Brown &amp; white. Blue-eyed. Unforgettable.</p>
+      <button class="cta" type="button" onclick="document.getElementById('meet').scrollIntoView({behavior:'smooth'})">Meet Oakley</button>
+    </div>
+    <div class="hero-img">
+      <img src="assets/02-oakley.jpg" alt="Kristen holding Oakley, a brown-and-white Pomsky puppy with bright blue eyes">
+    </div>
+  </div>
+</section>
+
+<section id="meet">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">THE FACE</span>
+      <h2>Meet Oakley</h2>
+      <p>A Pomsky with the soul of an old soul. Brown-and-white coat, piercing blue eyes, and a personality that could charm the bark off a tree. Currently training for world domination via snuggles and dramatic zoomies.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <img src="assets/02-oakley.jpg" alt="Kristen and Oakley up close — selfie">
+        <div class="card-content">
+          <h3>Oakley &amp; Mom</h3>
+          <p>Daily co-pilot. Professional lap warmer. Expert at pretending he didn't just steal the last bite of toast.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/04-grandma.jpg" alt="Kristen with her grandmother in the backyard">
+        <div class="card-content">
+          <h3>Family Approved</h3>
+          <p>Grandma's favorite. Has never met a human he didn't immediately claim as his person.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="adventures" class="adventures">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge forest">LIFESTYLE</span>
+      <h2>Adventures with Oakley</h2>
+      <p>From Spritz bars to sunflower fields — Colorado is the playground, the family is the crew.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <img src="assets/03-spritz-bar.jpg" alt="Kristen with a friend at the Just a Spritz Older birthday party — gold balloons and Aperol bottles">
+        <div class="card-content">
+          <h3>The Spritz Bar Incident</h3>
+          <p>One human turned 26. Oakley supervised from a very important lap. Gold balloons were involved. History was made.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/05-pines.jpg" alt="Kristen with her sister among Colorado pine trees">
+        <div class="card-content">
+          <h3>Pine Forest Escapades</h3>
+          <p>Colorado's finest trees have been thoroughly sniffed. Sibling-approved hiking partner.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/06-sunflowers.jpg" alt="Kristen and her mom holding sunflower bouquets at a flower farm">
+        <div class="card-content">
+          <h3>Sunflower Season</h3>
+          <p>Mom's favorite. Oakley prefers the shade but tolerates the photos for treats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="merch">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">SHOP</span>
+      <h2>Merch That Actually Slaps</h2>
+      <p>Limited drops. Premium quality. All proceeds go toward Oakley's treat budget (and future tiny jackets).</p>
+    </div>
+    <div class="merch-grid">
+      <div class="merch-item">
+        <div class="emoji" aria-hidden="true">🧢</div>
+        <h3>Oakley Dad Hat</h3>
+        <div class="price">$32</div>
+        <p>Embroidered. One size. Extremely cute on humans.</p>
+        <button class="cta" type="button" onclick="fakeBuy(this)">Add to Cart</button>
+      </div>
+      <div class="merch-item">
+        <div class="emoji" aria-hidden="true">🧥</div>
+        <h3>Signature Hoodie</h3>
+        <div class="price">$68</div>
+        <p>Heavyweight fleece. Perfect for Colorado mornings.</p>
+        <button class="cta" type="button" onclick="fakeBuy(this)">Add to Cart</button>
+      </div>
+      <div class="merch-item">
+        <div class="emoji" aria-hidden="true">🐾</div>
+        <h3>Paw Print Bandana</h3>
+        <div class="price">$18</div>
+        <p>Reversible. Gold + Spritz Orange. Oakley approved.</p>
+        <button class="cta" type="button" onclick="fakeBuy(this)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsor">
+  <div class="container sponsor-inner">
+    <span class="badge">BRAND PARTNERSHIPS</span>
+    <h2 style="font-size: 2.4rem; margin: 18px 0 16px;">Let's Work Together</h2>
+    <p>Oakley is available for select brand collaborations, influencer campaigns, and extremely cute photoshoots. Inquire below.</p>
+    <button class="cta" type="button" onclick="fakeSponsor()" style="margin-top: 28px;">Inquire About Partnerships</button>
+    <div class="partners-line">
+      Current partners: local sunflower farms • Colorado pet bakeries • one very patient grandma
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="logo" style="color: #C5B8A8; margin-bottom: 12px;">OAKLEY</div>
+      <div style="opacity: 0.75;">A fictional brand experience celebrating a very real, very good boy.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <div class="line">Meet Oakley</div>
+      <div class="line">Adventures</div>
+      <div class="line">Merch</div>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <div class="line">Instagram</div>
+      <div class="line">TikTok</div>
+      <div class="line">Email Oakley</div>
+    </div>
+  </div>
+  <div class="container footer-disclaimer">
+    © 2026 Oakley &amp; Co. • Made with love in Colorado • This is a birthday surprise, not a real business
+  </div>
+</footer>
+
+<script>
+function fakeBuy(btn) {
+  const original = btn.textContent;
+  btn.textContent = 'Added ✓';
+  btn.style.background = 'var(--forest)';
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.style.background = '';
+  }, 1400);
+}
+function fakeSponsor() {
+  alert("Thanks! In a real brand site this would open a contact form. For now, just know Oakley would love to collab.");
+}
+</script>
+</body>
+</html>

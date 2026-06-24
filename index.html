@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oakley • The Pomsky • Official Site</title>
+<style>
+:root {
+  --gold: #C5A26F;
+  --spritz: #E07B3D;
+  --cream: #F8F4EC;
+  --espresso: #3C2F2F;
+  --forest: #4A5C3F;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Georgia', serif; background: var(--cream); color: var(--espresso); line-height:1.6; }
+h1,h2 { font-family: 'Playfair Display', Georgia, serif; font-weight:700; }
+.container { max-width:1100px; margin:0 auto; padding:0 20px; }
+nav { position:fixed; top:0; left:0; right:0; background:rgba(248,244,236,0.96); backdrop-filter:blur(12px); z-index:100; border-bottom:1px solid rgba(197,162,111,0.3); }
+nav .nav-inner { display:flex; justify-content:space-between; align-items:center; padding:18px 40px; max-width:1100px; margin:0 auto; }
+.logo { font-size:1.4rem; color:var(--gold); font-weight:700; letter-spacing:1px; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { color:var(--espresso); text-decoration:none; font-size:0.95rem; transition:color .2s; }
+.nav-links a:hover { color:var(--gold); }
+section { padding:120px 0 80px; }
+.hero { background:linear-gradient(135deg, #F8F4EC 0%, #EDE4D3 100%); position:relative; overflow:hidden; }
+.hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; min-height:620px; }
+.hero-text h1 { font-size:3.8rem; line-height:1.05; margin-bottom:24px; color:var(--espresso); }
+.hero-text .tag { display:inline-block; background:var(--gold); color:white; padding:6px 18px; font-size:0.85rem; border-radius:999px; margin-bottom:20px; letter-spacing:1px; }
+.hero-text p { font-size:1.15rem; max-width:420px; color:#5C5248; margin-bottom:36px; }
+.cta { background:var(--spritz); color:white; padding:14px 38px; font-size:1rem; border:none; border-radius:999px; cursor:pointer; font-weight:600; transition:all .2s; }
+.cta:hover { background:#C96A30; transform:translateY(-1px); }
+.hero-img { position:relative; }
+.hero-img img { width:100%; max-width:480px; border-radius:24px; box-shadow:0 30px 70px rgba(60,47,47,0.15); }
+#meet { background:white; }
+.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px; margin-top:50px; }
+.card { background:var(--cream); border-radius:20px; overflow:hidden; border:1px solid rgba(197,162,111,0.2); transition:transform .3s, box-shadow .3s; }
+.card:hover { transform:translateY(-8px); box-shadow:0 25px 60px rgba(0,0,0,0.08); }
+.card img { width:100%; height:280px; object-fit:cover; }
+.card-content { padding:28px; }
+.card h3 { font-size:1.35rem; margin-bottom:8px; color:var(--espresso); }
+.badge { font-size:0.75rem; padding:2px 10px; background:var(--gold); color:white; border-radius:999px; display:inline-block; margin-bottom:12px; }
+.adventures { background:#F1EDE3; }
+.merch-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
+.merch-item { background:white; padding:32px; border-radius:18px; text-align:center; border:1px solid rgba(197,162,111,0.15); }
+.merch-item .price { color:var(--gold); font-weight:700; font-size:1.1rem; }
+footer { background:var(--espresso); color:#C5B8A8; padding:60px 0 40px; font-size:0.9rem; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:60px; }
+.footer-col h4 { color:white; margin-bottom:16px; font-size:1rem; }
+.easter { position:absolute; width:42px; height:42px; cursor:pointer; transition:transform .2s; }
+.easter:hover { transform:scale(1.3); }
+#spritz-egg { top:38%; right:12%; background:rgba(224,123,61,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6rem; }
+#eye-egg { bottom:22%; left:18%; width:36px; height:36px; background:rgba(60,47,47,0.08); border-radius:50%; }
+#sunflower-egg { top:18%; right:22%; font-size:1.8rem; opacity:0.7; }
+#age-egg { position:absolute; bottom:14%; right:28%; font-size:0.75rem; color:var(--gold); font-weight:700; letter-spacing:3px; opacity:0.4; }
+#reveal { display:none; position:fixed; inset:0; background:rgba(60,47,47,0.92); z-index:200; align-items:center; justify-content:center; }
+.reveal-content { background:var(--cream); max-width:620px; margin:20px; padding:60px 50px; border-radius:24px; text-align:center; position:relative; }
+.confetti { position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:2rem; pointer-events:none; }
+.message { font-size:1.05rem; line-height:1.7; color:#5C5248; margin:30px 0; }
+.signature { font-family:'Playfair Display',Georgia,serif; font-size:1.3rem; color:var(--gold); margin-top:20px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">OAKLEY</div>
+    <div class="nav-links">
+      <a href="#meet">Meet</a>
+      <a href="#adventures">Adventures</a>
+      <a href="#merch">Merch</a>
+      <a href="#sponsor">Sponsorships</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="tag">EST 2025 • COLORADO</span>
+      <h1>Oakley.<br>The Pomsky.</h1>
+      <p>Official brand home of the world's most charismatic mini-husky. Brown & white. Blue-eyed. Unforgettable.</p>
+      <button class="cta" onclick="document.getElementById('meet').scrollIntoView({behavior:'smooth'})">Meet Oakley</button>
+    </div>
+    <div class="hero-img">
+      <img src="assets/01-birthday-queen.jpg" alt="Kristen with Oakley in birthday sash">
+      <div id="spritz-egg" class="easter" onclick="triggerSpritzEgg()" title="Something fizzy here...">🥂</div>
+      <div id="eye-egg" class="easter" onclick="triggerEyeEgg()" title="Those eyes..."></div>
+      <div id="sunflower-egg" class="easter" onclick="triggerSunflowerEgg()" title="🌻">🌻</div>
+      <div id="age-egg" onclick="triggerAgeEgg()">26</div>
+    </div>
+  </div>
+</section>
+
+<section id="meet">
+  <div class="container">
+    <div style="max-width:620px;">
+      <span class="badge">THE FACE</span>
+      <h2 style="font-size:2.6rem; margin:12px 0 20px;">Meet Oakley</h2>
+      <p style="font-size:1.1rem; color:#5C5248;">A 9-month-old Pomsky with the soul of an old soul. Brown-and-white coat, piercing blue eyes, and a personality that could charm the bark off a tree. Currently training for world domination via snuggles and dramatic zoomies.</p>
+    </div>
+    <div class="card-grid" style="margin-top:60px;">
+      <div class="card">
+        <img src="assets/02-oakley.jpg" alt="Kristen holding Oakley">
+        <div class="card-content">
+          <h3>Oakley &amp; Mom</h3>
+          <p style="color:#6B5F54; font-size:0.95rem;">Daily co-pilot. Professional lap warmer. Expert at pretending he didn't just steal the last bite of toast.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/04-grandma.jpg" alt="Family moment">
+        <div class="card-content">
+          <h3>Family Approved</h3>
+          <p style="color:#6B5F54; font-size:0.95rem;">Grandma's favorite. Has never met a human he didn't immediately claim as his person.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="adventures" class="adventures">
+  <div class="container">
+    <span class="badge" style="background:var(--forest);">LIFESTYLE</span>
+    <h2 style="font-size:2.4rem; margin:12px 0 40px;">Adventures with Oakley</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="assets/03-spritz-bar.jpg" alt="Spritz Bar birthday moment">
+        <div class="card-content">
+          <h3>The Spritz Bar Incident</h3>
+          <p style="color:#6B5F54;">One human turned 26. Oakley supervised from a very important lap. Gold balloons were involved. History was made.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/05-pines.jpg" alt="Pine forest adventure">
+        <div class="card-content">
+          <h3>Pine Forest Escapades</h3>
+          <p style="color:#6B5F54;">Colorado's finest trees have been thoroughly sniffed. Sibling-approved hiking partner.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/06-sunflowers.jpg" alt="Sunflower field">
+        <div class="card-content">
+          <h3>Sunflower Season</h3>
+          <p style="color:#6B5F54;">Mom's favorite. Oakley prefers the shade but tolerates the photos for treats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="merch">
+  <div class="container">
+    <span class="badge">SHOP</span>
+    <h2 style="font-size:2.4rem; margin:12px 0 16px;">Merch That Actually Slaps</h2>
+    <p style="max-width:480px; color:#5C5248;">Limited drops. Premium quality. All proceeds go toward Oakley's treat budget (and future tiny jackets).</p>
+    <div class="merch-grid" style="margin-top:50px;">
+      <div class="merch-item">
+        <div style="font-size:2.8rem; margin-bottom:16px;">🧢</div>
+        <h3>Oakley Dad Hat</h3>
+        <div class="price">$32</div>
+        <p style="font-size:0.85rem; margin-top:8px; color:#6B5F54;">Embroidered. One size. Extremely cute on humans.</p>
+        <button class="cta" style="margin-top:20px; padding:10px 26px; font-size:0.9rem;" onclick="fakeBuy(this)">Add to Cart</button>
+      </div>
+      <div class="merch-item">
+        <div style="font-size:2.8rem; margin-bottom:16px;">🧥</div>
+        <h3>Signature Hoodie</h3>
+        <div class="price">$68</div>
+        <p style="font-size:0.85rem; margin-top:8px; color:#6B5F54;">Heavyweight fleece. Perfect for Colorado mornings.</p>
+        <button class="cta" style="margin-top:20px; padding:10px 26px; font-size:0.9rem;" onclick="fakeBuy(this)">Add to Cart</button>
+      </div>
+      <div class="merch-item">
+        <div style="font-size:2.8rem; margin-bottom:16px;">🐾</div>
+        <h3>Paw Print Bandana</h3>
+        <div class="price">$18</div>
+        <p style="font-size:0.85rem; margin-top:8px; color:#6B5F54;">Reversible. Gold + Spritz Orange. Oakley approved.</p>
+        <button class="cta" style="margin-top:20px; padding:10px 26px; font-size:0.9rem;" onclick="fakeBuy(this)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsor" style="background:white;">
+  <div class="container" style="text-align:center; max-width:620px;">
+    <span class="badge">BRAND PARTNERSHIPS</span>
+    <h2 style="font-size:2.4rem; margin:20px 0 18px;">Let's Work Together</h2>
+    <p style="color:#5C5248;">Oakley is available for select brand collaborations, influencer campaigns, and extremely cute photoshoots. Inquire below.</p>
+    <button onclick="fakeSponsor()" class="cta" style="margin-top:32px;">Inquire About Partnerships</button>
+    <div style="margin-top:60px; font-size:0.85rem; color:#8A7C6D;">
+      Current partners: local sunflower farms • Colorado pet bakeries • one very patient grandma
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="logo" style="color:#C5B8A8; margin-bottom:12px;">OAKLEY</div>
+      <div style="opacity:0.7;">A fictional brand experience celebrating a very real, very good boy.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <div style="display:flex; flex-direction:column; gap:8px; opacity:0.75;">
+        <div>Meet Oakley</div><div>Adventures</div><div>Merch</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <div style="display:flex; flex-direction:column; gap:8px; opacity:0.75;">
+        <div>Instagram</div><div>TikTok</div><div>Email Oakley</div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="margin-top:70px; text-align:center; font-size:0.75rem; opacity:0.5;">
+    © 2026 Oakley &amp; Co. • Made with love in Colorado • This is a birthday surprise, not a real business
+  </div>
+</footer>
+
+<div id="reveal">
+  <div class="reveal-content">
+    <div class="confetti" id="confetti-container"></div>
+    <div style="font-size:3.2rem; margin-bottom:12px;">🎉</div>
+    <h2 style="font-size:2.1rem; color:var(--espresso);">Surprise!</h2>
+    <div class="message">
+      Happy Birthday, Kristen.<br><br>
+      You've been an incredible friend for five years — the kind of person who makes every shift better just by being there. Here's to 26, to Aperol spritzes, to Oakley ruling the world one zoomie at a time, and to all the beautiful moments ahead.<br><br>
+      Love you lots,<br>
+      <span class="signature">Paotie</span>
+    </div>
+    <button onclick="closeReveal()" class="cta" style="background:var(--espresso); padding:12px 42px;">Close</button>
+  </div>
+</div>
+
+<script>
+let eggsFound = 0;
+const totalEggs = 4;
+
+function triggerSpritzEgg() {
+  const el = document.getElementById('spritz-egg');
+  el.style.transition = 'all .4s';
+  el.innerHTML = '✨';
+  el.style.background = 'rgba(224,123,61,0.4)';
+  eggsFound++;
+  checkEggs();
+}
+
+function triggerEyeEgg() {
+  const el = document.getElementById('eye-egg');
+  el.style.transition = 'all .4s';
+  el.style.background = 'var(--gold)';
+  el.style.boxShadow = '0 0 0 8px rgba(197,162,111,0.3)';
+  eggsFound++;
+  checkEggs();
+}
+
+function triggerSunflowerEgg() {
+  const el = document.getElementById('sunflower-egg');
+  el.style.transition = 'all .5s';
+  el.style.transform = 'rotate(180deg) scale(1.4)';
+  el.style.opacity = '1';
+  eggsFound++;
+  checkEggs();
+}
+
+function triggerAgeEgg() {
+  const el = document.getElementById('age-egg');
+  el.style.transition = 'all .3s';
+  el.style.opacity = '1';
+  el.style.color = 'var(--spritz)';
+  el.style.transform = 'scale(1.6)';
+  eggsFound++;
+  checkEggs();
+}
+
+function checkEggs() {
+  if (eggsFound >= totalEggs) {
+    setTimeout(() => {
+      document.getElementById('reveal').style.display = 'flex';
+      launchConfetti();
+    }, 420);
+  }
+}
+
+function launchConfetti() {
+  const container = document.getElementById('confetti-container');
+  const colors = ['#C5A26F', '#E07B3D', '#F8F4EC', '#4A5C3F'];
+  for (let i = 0; i < 42; i++) {
+    const piece = document.createElement('div');
+    piece.textContent = ['✨','🌻','🥂','🎈'][Math.floor(Math.random()*4)];
+    piece.style.position = 'absolute';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.top = '-20px';
+    piece.style.fontSize = (Math.random() * 1.1 + 0.9) + 'rem';
+    piece.style.transition = `transform ${Math.random()*1.8+2.2}s linear, opacity ${Math.random()*1.8+2.2}s linear`;
+    piece.style.zIndex = '10';
+    container.appendChild(piece);
+    
+    setTimeout(() => {
+      piece.style.transform = `translateY(${380 + Math.random()*220}px) rotate(${Math.random()*480-120}deg)`;
+      piece.style.opacity = '0';
+    }, 60);
+    
+    setTimeout(() => piece.remove(), 4200);
+  }
+}
+
+function fakeBuy(btn) {
+  const orig = btn.textContent;
+  btn.textContent = 'Added ✓';
+  btn.style.background = '#4A5C3F';
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = 'var(--spritz)';
+  }, 1350);
+}
+
+function fakeSponsor() {
+  alert("Thanks! In a real brand site this would open a contact form. For now, just know Oakley would love to collab.");
+}
+
+function closeReveal() {
+  document.getElementById('reveal').style.display = 'none';
+}
+
+// Konami code easter egg
+let konami = [];
+const target = [38,38,40,40,37,39,37,39,66,65];
+document.addEventListener('keydown', function(e) {
+  konami.push(e.keyCode);
+  if (konami.length > target.length) konami.shift();
+  if (konami.join(',') === target.join(',')) {
+    document.getElementById('reveal').style.display = 'flex';
+    launchConfetti();
+    konami = [];
+  }
+});
+
+// Typing OAKLEY anywhere
+let typed = '';
+document.addEventListener('keypress', function(e) {
+  typed += e.key.toUpperCase();
+  if (typed.length > 6) typed = typed.slice(-6);
+  if (typed === 'OAKLEY') {
+    document.getElementById('reveal').style.display = 'flex';
+    launchConfetti();
+    typed = '';
+  }
+});
+</script>
+</body>
+</html>

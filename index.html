@@ -3,367 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Kristen</title>
-<meta name="description" content="A birthday surprise for Kristen — find the clues.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%A5%82%3C/text%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<title>For Kristen • 26</title>
 <style>
 :root {
   --gold: #C5A26F;
-  --gold-soft: #D9BC93;
   --spritz: #E07B3D;
   --cream: #F8F4EC;
-  --cream-deep: #EFE6D5;
-  --espresso: #3C2F2F;
-  --forest: #4A5C3F;
+  --espresso: #2C2522;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
-html, body { height:100%; }
 body {
   font-family: Georgia, 'Times New Roman', serif;
-  background: radial-gradient(ellipse at top, var(--cream) 0%, var(--cream-deep) 100%);
-  color: var(--espresso);
-  line-height: 1.6;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1428 100%);
+  color: var(--cream);
   overflow: hidden;
-  position: relative;
-}
-.stage {
   height: 100vh;
+}
+.scene {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 24px;
-  position: relative;
+  flex-direction: column;
+  padding: 60px 40px;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.hello {
+.scene.active { opacity: 1; z-index: 2; }
+.scene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.55);
+}
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 820px;
+}
+h1 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(3.4rem, 9vw, 6.2rem);
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--espresso);
   margin-bottom: 24px;
-  text-align: center;
-  animation: fadeUp 1.2s ease;
+  color: var(--cream);
 }
-.subtitle {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-size: clamp(1rem, 2.4vw, 1.35rem);
-  color: #6B5F54;
-  text-align: center;
-  max-width: 520px;
-  margin-bottom: 50px;
-  animation: fadeUp 1.4s ease;
+p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 40px;
+  color: #D4C9B8;
 }
-.subtitle .accent { color: var(--spritz); font-style: normal; font-weight: 700; letter-spacing: 0.05em; }
-.counter {
+.hint {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 60px;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+.hint:hover { color: var(--spritz); }
+.progress {
   position: fixed;
-  bottom: 28px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 0.95rem;
-  color: var(--gold);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  background: rgba(248, 244, 236, 0.7);
-  padding: 10px 24px;
-  border-radius: 999px;
-  border: 1px solid rgba(197, 162, 111, 0.3);
-  backdrop-filter: blur(8px);
-  user-select: none;
-}
-.counter b { color: var(--spritz); font-weight: 700; }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* easter eggs — visible but feel decorative */
-.egg {
-  position: fixed;
-  cursor: pointer;
-  transition: all .4s ease;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  font-family: inherit;
-}
-.egg:focus-visible { outline: 2px solid var(--spritz); outline-offset: 6px; }
-.egg.found { transform: scale(1.4); opacity: 1 !important; }
-
-#egg-spritz {
-  top: 8%;
-  right: 9%;
-  font-size: 2.2rem;
-  opacity: 0.55;
-}
-#egg-spritz.found { color: var(--spritz); text-shadow: 0 0 24px rgba(224,123,61,0.5); }
-
-#egg-eye {
-  bottom: 14%;
-  left: 9%;
-  width: 28px;
-  height: 28px;
-  background: radial-gradient(circle, #5A9DB8 0%, #1E3A4A 70%, transparent 100%);
-  opacity: 0.45;
-  border: 1px solid rgba(60,47,47,0.15);
-}
-#egg-eye.found { opacity: 1; box-shadow: 0 0 0 10px rgba(197,162,111,0.3); }
-
-#egg-sunflower {
-  top: 14%;
-  left: 11%;
-  font-size: 1.9rem;
-  opacity: 0.5;
-}
-#egg-sunflower.found { transform: rotate(180deg) scale(1.5); opacity: 1; }
-
-#egg-26 {
-  bottom: 10%;
-  right: 10%;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2rem;
-  font-style: italic;
-  color: var(--gold);
-  opacity: 0.35;
-  letter-spacing: 0.05em;
-  width: auto; height: auto;
-  background: transparent;
-}
-#egg-26.found { opacity: 1; color: var(--spritz); transform: scale(1.6); }
-
-/* reveal modal */
-#reveal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(60, 47, 47, 0.92);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-#reveal.open { display: flex; animation: fadeIn .5s ease; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.reveal-card {
-  background: var(--cream);
-  max-width: 620px;
-  width: 100%;
-  padding: 56px 44px 44px;
-  border-radius: 24px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.4);
-  animation: popIn .6s cubic-bezier(.18,.89,.43,1.19);
-}
-@keyframes popIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-.confetti-wrap { position: absolute; inset: 0; pointer-events: none; overflow: hidden; border-radius: 24px; }
-.confetti-piece { position: absolute; top: -30px; font-size: 1.4rem; }
-.reveal-emoji { font-size: 3.2rem; margin-bottom: 10px; }
-.reveal-card h2 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4rem;
-  color: var(--espresso);
-  margin-bottom: 8px;
-  font-weight: 700;
-}
-.reveal-card .happybday {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  color: var(--gold);
-  font-size: 1.3rem;
-  margin-bottom: 28px;
-}
-.reveal-card .message {
-  font-size: 1.04rem;
-  line-height: 1.75;
-  color: #5C5248;
-  text-align: left;
-  margin: 0 auto 32px;
-  max-width: 460px;
-}
-.signature {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-size: 1.3rem;
-  color: var(--gold);
-  display: inline-block;
-  margin-top: 6px;
-}
-.bonus-row {
-  margin-top: 36px;
-  padding-top: 28px;
-  border-top: 1px dashed rgba(197, 162, 111, 0.4);
-}
-.bonus-row .label {
   font-size: 0.8rem;
   letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-.bonus-btn {
-  display: inline-block;
-  background: var(--spritz);
-  color: white;
-  padding: 14px 32px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  font-family: Georgia, serif;
-  font-size: 0.95rem;
-  transition: all .25s;
-  border: none;
-  cursor: pointer;
-}
-.bonus-btn:hover { background: #C96A30; transform: translateY(-2px); }
-.bonus-btn:focus-visible { outline: 2px solid var(--espresso); outline-offset: 3px; }
-.close-x {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: transparent;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: rgba(60,47,47,0.4);
-  padding: 8px;
-  line-height: 1;
-}
-.close-x:hover { color: var(--espresso); }
-.close-x:focus-visible { outline: 2px solid var(--spritz); outline-offset: 2px; }
-
-/* mobile */
-@media (max-width: 720px) {
-  .stage { padding: 30px 20px; }
-  .subtitle { margin-bottom: 30px; }
-  .counter { bottom: 18px; font-size: 0.85rem; padding: 8px 18px; }
-  #egg-spritz { font-size: 1.7rem; top: 6%; right: 7%; }
-  #egg-eye { width: 22px; height: 22px; bottom: 18%; left: 7%; }
-  #egg-sunflower { font-size: 1.5rem; top: 10%; left: 8%; }
-  #egg-26 { font-size: 1.6rem; bottom: 14%; right: 8%; }
-  .reveal-card { padding: 44px 28px 36px; }
-  .reveal-card h2 { font-size: 2rem; }
-  .reveal-card .message { font-size: 0.98rem; }
+  color: #6B635A;
+  z-index: 10;
 }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<main class="stage" aria-label="A surprise for Kristen">
-  <h1 class="hello">Hey, you.</h1>
-  <p class="subtitle">There's something hidden here for you. <span class="accent">Find it.</span></p>
-</main>
-
-<button id="egg-spritz" class="egg" type="button" aria-label="Hidden clue: spritz glass" title="hmm…">🥂</button>
-<button id="egg-eye"      class="egg" type="button" aria-label="Hidden clue: a watchful eye" title="hmm…"></button>
-<button id="egg-sunflower" class="egg" type="button" aria-label="Hidden clue: sunflower" title="hmm…">🌻</button>
-<button id="egg-26"       class="egg" type="button" aria-label="Hidden clue: a number" title="hmm…">26</button>
-
-<div class="counter" aria-live="polite"><b id="found">0</b> / 4 clues found</div>
-
-<div id="reveal" role="dialog" aria-modal="true" aria-labelledby="reveal-title">
-  <div class="reveal-card">
-    <button class="close-x" type="button" aria-label="Close" onclick="closeReveal()">✕</button>
-    <div class="reveal-emoji" aria-hidden="true">🎉</div>
-    <h2 id="reveal-title">Surprise!</h2>
-    <p class="happybday">Happy Birthday, Kristen.</p>
-    <p class="message">
-      You've been an incredible friend for five years — the kind of person who makes every shift better just by being there.
-      Here's to 26, to Aperol spritzes, to Oakley ruling the world one zoomie at a time, and to all the beautiful moments ahead.
-      <br><br>
-      Love you lots,
-      <br>
-      <span class="signature">Paotie</span>
-    </p>
-    <div class="bonus-row">
-      <div class="label">One more thing</div>
-      <a class="bonus-btn" href="oakley.html">🐾 Check out Oakley's new website</a>
-    </div>
-    <div class="confetti-wrap" id="confetti-wrap" aria-hidden="true"></div>
+<div id="scene-1" class="scene active" style="background-image: url('assets/06-sunflowers.jpg')">
+  <div class="content">
+    <h1>Hey, you!</h1>
+    <p>I heard it was your Special Day!</p>
+    <div class="hint" onclick="nextScene()">tap to continue →</div>
   </div>
 </div>
 
+<div id="scene-2" class="scene" style="background-image: url('assets/01-birthday-queen.jpg')">
+  <div class="content">
+    <h1>Birthday Queen</h1>
+    <p>The sash said what everyone already knew. You wear the crown without trying.</p>
+    <div class="hint" onclick="nextScene()">tap to continue →</div>
+  </div>
+</div>
+
+<div id="scene-3" class="scene" style="background-image: url('assets/02-oakley.jpg')">
+  <div class="content">
+    <h1>Oakley</h1>
+    <p>Blue eyes, mischief, and the softest heart in the house. Your little shadow.</p>
+    <div class="hint" onclick="nextScene()">tap to continue →</div>
+  </div>
+</div>
+
+<div id="scene-4" class="scene" style="background-image: url('assets/04-grandma.jpg')">
+  <div class="content">
+    <h1>Roots</h1>
+    <p>The people who made you laugh before you knew how to hold a camera. The ones who still do.</p>
+    <div class="hint" onclick="nextScene()">tap to continue →</div>
+  </div>
+</div>
+
+<div id="scene-5" class="scene" style="background-image: url('assets/05-pines.jpg')">
+  <div class="content">
+    <h1>Colorado Light</h1>
+    <p>Pines, sun, and the quiet that only happens at elevation. You belong here.</p>
+    <div class="hint" onclick="nextScene()">tap to continue →</div>
+  </div>
+</div>
+
+<div id="scene-6" class="scene" style="background-image: url('assets/06-sunflowers.jpg')">
+  <div class="content">
+    <h1>Happy Birthday, Kristen!</h1>
+    <p>26 looks good on you.</p>
+    <p style="margin-top:40px; font-size:1rem; color:#A89A85;">— Paotie • June 2026</p>
+  </div>
+</div>
+
+<div class="progress"><span id="progress-text">1 / 6</span></div>
+
 <script>
-const eggs = ['egg-spritz', 'egg-eye', 'egg-sunflower', 'egg-26'];
-const found = new Set();
+let current = 1;
+const total = 6;
 
-function markFound(id) {
-  if (found.has(id)) return;
-  found.add(id);
-  const el = document.getElementById(id);
-  el.classList.add('found');
-  document.getElementById('found').textContent = found.size;
-  if (found.size >= eggs.length) setTimeout(openReveal, 600);
-}
-
-eggs.forEach(id => {
-  const el = document.getElementById(id);
-  el.addEventListener('click', () => markFound(id));
-  el.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); markFound(id); }
-  });
-});
-
-function openReveal() {
-  const modal = document.getElementById('reveal');
-  modal.classList.add('open');
-  launchConfetti();
-  // focus into the modal for keyboard users
-  setTimeout(() => modal.querySelector('.bonus-btn').focus(), 700);
-}
-
-function closeReveal() {
-  document.getElementById('reveal').classList.remove('open');
-}
-
-function launchConfetti() {
-  const wrap = document.getElementById('confetti-wrap');
-  wrap.innerHTML = '';
-  const glyphs = ['✨','🌻','🥂','🎈','🐾'];
-  for (let i = 0; i < 36; i++) {
-    const piece = document.createElement('div');
-    piece.className = 'confetti-piece';
-    piece.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
-    piece.style.left = Math.random() * 100 + '%';
-    piece.style.fontSize = (0.9 + Math.random() * 1.2) + 'rem';
-    piece.style.transition = `transform ${2.2 + Math.random() * 1.8}s linear, opacity ${2.2 + Math.random() * 1.8}s linear`;
-    wrap.appendChild(piece);
-    requestAnimationFrame(() => {
-      piece.style.transform = `translateY(${420 + Math.random() * 200}px) rotate(${Math.random() * 480 - 120}deg)`;
-      piece.style.opacity = '0';
-    });
-    setTimeout(() => piece.remove(), 4400);
+function nextScene() {
+  const currentEl = document.getElementById(`scene-${current}`);
+  currentEl.classList.remove('active');
+  
+  current++;
+  if (current > total) current = total;
+  
+  const nextEl = document.getElementById(`scene-${current}`);
+  nextEl.classList.add('active');
+  
+  document.getElementById('progress-text').textContent = `${current} / ${total}`;
+  
+  // subtle confetti on final scene
+  if (current === 6) {
+    launchConfetti();
   }
 }
 
-// ESC closes the reveal
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeReveal();
+function launchConfetti() {
+  const colors = ['#C5A26F', '#E07B3D', '#F8F4EC'];
+  for (let i = 0; i < 60; i++) {
+    const p = document.createElement('div');
+    p.style.position = 'fixed';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.top = '-20px';
+    p.style.width = '8px';
+    p.style.height = '8px';
+    p.style.background = colors[Math.floor(Math.random()*colors.length)];
+    p.style.opacity = Math.random() * 0.7 + 0.4;
+    p.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    p.style.zIndex = '999';
+    p.style.transition = 'transform 2400ms linear, opacity 2400ms linear';
+    document.body.appendChild(p);
+    
+    const tx = (Math.random() - 0.5) * 400;
+    const ty = window.innerHeight + 100;
+    setTimeout(() => {
+      p.style.transform = `translate(${tx}px, ${ty}px) rotate(${Math.random()*720-360}deg)`;
+      p.style.opacity = '0';
+    }, 40);
+    setTimeout(() => p.remove(), 2600);
+  }
+}
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+  if (e.key === ' ' || e.key === 'Enter') {
+    e.preventDefault();
+    nextScene();
+  }
 });
 
-// Konami backdoor
-const konami = [38,38,40,40,37,39,37,39,66,65];
-let kbuf = [];
-document.addEventListener('keydown', e => {
-  kbuf.push(e.keyCode);
-  if (kbuf.length > konami.length) kbuf.shift();
-  if (kbuf.join(',') === konami.join(',')) { eggs.forEach(markFound); kbuf = []; }
-});
-
-// Typed OAKLEY backdoor
-let tbuf = '';
-document.addEventListener('keypress', e => {
-  tbuf = (tbuf + (e.key || '').toUpperCase()).slice(-6);
-  if (tbuf === 'OAKLEY') { eggs.forEach(markFound); tbuf = ''; }
+// Click anywhere on active scene also advances
+document.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('hint')) {
+    const active = document.querySelector('.scene.active');
+    if (active) nextScene();
+  }
 });
 </script>
 </body>

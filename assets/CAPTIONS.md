@@ -17,6 +17,8 @@ Source: Paotie supplied 2026-06-24. Six photos delivered. Builder picks which fi
 | `11-cocktail-share.jpg` | Kristen + a friend leaning over a shared cocktail glass with two blue straws. Restaurant patio. | **Friends Ken Burns** — close + fun |
 | `12-family-graduation.jpg` | Kristen (or sibling) in white graduation cap between dad (suit + striped tie) and mom (teal + green floral skirt). | **Roots Ken Burns** — milestone family photo |
 | `13-family-dad-kitchen.jpg` | Older man (likely dad — same as in graduation photo) in red shirt + plaid jacket, hands raised in playful surprise, vintage kitchen. | **Roots Ken Burns** — character + warmth |
+| `14-kristen-collage.jpg` | Colorful construction-paper collage — Kristen's smiling face cut-outs with "26" party hat stickers, arranged on orange/purple/blue backgrounds. Party-vibe handmade. | **Friends scene background** — replaces the dark bg behind the Ken Burns gallery |
+| `15-nasturtium.jpg` | Bright orange nasturtium flower in close-up with green round leaves. Garden / hardy / rooted feeling. | **Roots scene background** — replaces the dark bg behind the Ken Burns gallery |
 
 ## Key facts these photos confirm
 

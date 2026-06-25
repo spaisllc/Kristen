@@ -1,10 +1,23 @@
-# Kristen — Birthday Mockup Site
+# Kristen — Birthday Card
 
-> Interactive birthday card for Kristen, disguised as her hypothetical puppy-influencer brand site. Easter-egg hunt → surprise reveal. Ships to GitHub Pages.
+> Interactive birthday card for Kristen: a 7-scene linear journey through her year, with Ken Burns photo galleries, gold-forward typography, All Star auto-playing on first tap, confetti finale, and a personal blessing. Lives at the bare URL of the GitHub Pages site.
 
 **Recipient:** Kristen Veretto (IG: @kristen.veretto)
-**Occasion:** Birthday (was Monday 2026-06-22; deliver Friday 2026-06-26)
-**Live URL target:** https://spaisllc.github.io/Kristen/
+**Occasion:** Birthday (was Monday 2026-06-22; delivering Thu/Fri 2026-06-25/26)
+**Live URL:** https://spaisllc.github.io/Kristen/
+**Status (as of 2026-06-24):** **v7 shipped — ready to send.** See [CHANGELOG.md](./CHANGELOG.md) for the full iteration history.
+
+## How it was built
+
+Most of the v3 → v7 iteration was driven through the team via Paperclip
+tickets (SPR-121, SPR-132, SPR-135, SPR-137, SPR-140, SPR-143). The
+dispatcher in `~/mission-control/services/dispatcher/` rendered focused
+task prompts from each ticket and piped them to `hermes chat -q` for the
+Researcher and Builder profiles (grok-4.3 via SuperGrok). Builder shipped
+~70% of each spec; the partial-completion gaps were finished in Claude
+Code. Music wiring, scene heights, and the v7 gold polish were finished
+manually; everything else came from the team. Receipt verifier in the
+dispatcher caught grok fabricating commit SHAs three separate runs.
 
 ---
 

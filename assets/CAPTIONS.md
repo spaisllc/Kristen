@@ -13,6 +13,10 @@ Source: Paotie supplied 2026-06-24. Six photos delivered. Builder picks which fi
 | `07-smile-selfie.jpg` | Close-up car-window selfie. Kristen, blonde wavy hair, winking + huge open-mouth smile, nose ring, brown sweater. Solo. | **Opener / first impression** — anonymous-feeling, joy-forward, no birthday context |
 | `08-spritz-friend.jpg` | Kristen in BIRTHDAY QUEEN sash with one friend in front of the "Just a Spritz Older" banner. Party scene with gold balloons + Aperol bottles. | **Friends collage** — pair with `09-friends-group.jpg` |
 | `09-friends-group.jpg` | Group selfie outside, ~6 people (friends + younger kids) all laughing, sunny backyard, drinks. | **Friends collage** — pair with `08-spritz-friend.jpg` |
+| `10-tongue-selfie.jpg` | Kristen with tongue out + ball cap, friend in background doing a hand-frame pose. Urban setting. | **Friends Ken Burns** — playful candid |
+| `11-cocktail-share.jpg` | Kristen + a friend leaning over a shared cocktail glass with two blue straws. Restaurant patio. | **Friends Ken Burns** — close + fun |
+| `12-family-graduation.jpg` | Kristen (or sibling) in white graduation cap between dad (suit + striped tie) and mom (teal + green floral skirt). | **Roots Ken Burns** — milestone family photo |
+| `13-family-dad-kitchen.jpg` | Older man (likely dad — same as in graduation photo) in red shirt + plaid jacket, hands raised in playful surprise, vintage kitchen. | **Roots Ken Burns** — character + warmth |
 
 ## Key facts these photos confirm
 

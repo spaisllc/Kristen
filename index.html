@@ -183,11 +183,27 @@ p {
 
 <div class="progress"><span id="progress-text">1 / 7</span></div>
 
+<iframe id="allStarPlayer"
+        src="about:blank"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        style="position: fixed; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; border: 0;"></iframe>
+
 <script>
 let current = 1;
 const total = 7;
+let musicStarted = false;
+function startMusic() {
+  if (musicStarted) return;
+  musicStarted = true;
+  const player = document.getElementById('allStarPlayer');
+  if (player) {
+    player.src = "https://www.youtube.com/embed/L_jWHffIx5E?start=0&end=15&autoplay=1";
+  }
+}
 
 function nextScene() {
+  startMusic();
   const currentEl = document.getElementById(`scene-${current}`);
   currentEl.classList.remove('active');
   

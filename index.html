@@ -81,12 +81,37 @@ p {
   color: #6B635A;
   z-index: 10;
 }
+
+/* Collage scenes */
+.collage {
+  display: flex;
+  gap: 12px;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 20px;
+}
+.collage .photo {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border: 1px solid rgba(197,162,111,0.2);
+}
+.collage .photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.collage .photo:first-child img { max-height: 420px; }
+.collage .photo:last-child img { max-height: 420px; }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="scene-1" class="scene active" style="background-image: url('assets/06-sunflowers.jpg')">
+<!-- Scene 1: NEW opener -->
+<div id="scene-1" class="scene active" style="background-image: url('assets/07-smile-selfie.jpg')">
   <div class="content">
     <h1>Hey, you!</h1>
     <p>I heard it was your Special Day!</p>
@@ -94,6 +119,7 @@ p {
   </div>
 </div>
 
+<!-- Scene 2 -->
 <div id="scene-2" class="scene" style="background-image: url('assets/01-birthday-queen.jpg')">
   <div class="content">
     <h1>Birthday Queen</h1>
@@ -102,6 +128,7 @@ p {
   </div>
 </div>
 
+<!-- Scene 3 -->
 <div id="scene-3" class="scene" style="background-image: url('assets/02-oakley.jpg')">
   <div class="content">
     <h1>Oakley</h1>
@@ -110,15 +137,34 @@ p {
   </div>
 </div>
 
-<div id="scene-4" class="scene" style="background-image: url('assets/04-grandma.jpg')">
+<!-- Scene 4: NEW Friends collage -->
+<div id="scene-4" class="scene">
   <div class="content">
-    <h1>Roots</h1>
-    <p>The people who made you laugh before you knew how to hold a camera. The ones who still do.</p>
+    <h1>Friends</h1>
+    <p>Wherever you go, you always have a smile — and you make people smile, too. Friends, family, and colleagues all love being around you.</p>
+    <div class="collage" style="margin-top: 40px;">
+      <div class="photo"><img src="assets/08-spritz-friend.jpg" alt=""></div>
+      <div class="photo"><img src="assets/09-friends-group.jpg" alt=""></div>
+    </div>
     <div class="hint" onclick="nextScene()">tap to continue →</div>
   </div>
 </div>
 
-<div id="scene-5" class="scene" style="background-image: url('assets/05-pines.jpg')">
+<!-- Scene 5: Roots collage (04 + 06) -->
+<div id="scene-5" class="scene">
+  <div class="content">
+    <h1>Roots</h1>
+    <p>The people who made you laugh before you knew how to hold a camera. The ones who still do.</p>
+    <div class="collage" style="margin-top: 40px;">
+      <div class="photo"><img src="assets/04-grandma.jpg" alt=""></div>
+      <div class="photo"><img src="assets/06-sunflowers.jpg" alt=""></div>
+    </div>
+    <div class="hint" onclick="nextScene()">tap to continue →</div>
+  </div>
+</div>
+
+<!-- Scene 6 -->
+<div id="scene-6" class="scene" style="background-image: url('assets/05-pines.jpg')">
   <div class="content">
     <h1>Colorado Light</h1>
     <p>Pines, sun, and the quiet that only happens at elevation. You belong here.</p>
@@ -126,7 +172,8 @@ p {
   </div>
 </div>
 
-<div id="scene-6" class="scene" style="background-image: url('assets/06-sunflowers.jpg')">
+<!-- Scene 7: Final -->
+<div id="scene-7" class="scene" style="background-image: url('assets/06-sunflowers.jpg')">
   <div class="content">
     <h1>Happy Birthday, Kristen!</h1>
     <p>26 looks good on you.</p>
@@ -134,11 +181,11 @@ p {
   </div>
 </div>
 
-<div class="progress"><span id="progress-text">1 / 6</span></div>
+<div class="progress"><span id="progress-text">1 / 7</span></div>
 
 <script>
 let current = 1;
-const total = 6;
+const total = 7;
 
 function nextScene() {
   const currentEl = document.getElementById(`scene-${current}`);
@@ -152,8 +199,7 @@ function nextScene() {
   
   document.getElementById('progress-text').textContent = `${current} / ${total}`;
   
-  // subtle confetti on final scene
-  if (current === 6) {
+  if (current === 7) {
     launchConfetti();
   }
 }

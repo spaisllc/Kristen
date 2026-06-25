@@ -28,12 +28,13 @@ body {
   flex-direction: column;
   padding: 60px 40px;
   opacity: 0;
-  transition: opacity 400ms ease;
+  transform: scale(0.96);
+  transition: opacity 1100ms cubic-bezier(0.4, 0, 0.2, 1), transform 1100ms cubic-bezier(0.4, 0, 0.2, 1);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.scene.active { opacity: 1; z-index: 2; }
+.scene.active { opacity: 1; transform: scale(1); z-index: 2; }
 .scene::before {
   content: '';
   position: absolute;
@@ -50,18 +51,20 @@ h1 {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(2.8rem, 7vw, 4.8rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
   margin-bottom: 24px;
-  color: var(--cream);
+  color: var(--gold);
+  text-shadow: 0 2px 14px rgba(0,0,0,0.5);
 }
 p {
   font-size: 1.25rem;
   line-height: 1.7;
   max-width: 620px;
   margin: 0 auto 40px;
-  color: #D4C9B8;
+  color: var(--cream);
+  font-weight: 400;
 }
-.title-gold { font-family: 'Dancing Script', cursive; color: var(--gold); font-size: 2.4rem; }.hint {
+.hint {
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -69,6 +72,7 @@ p {
   margin-top: 60px;
   cursor: pointer;
   transition: color 200ms ease;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.55);
 }
 .hint:hover { color: var(--spritz); }
 .progress {
@@ -78,7 +82,8 @@ p {
   transform: translateX(-50%);
   font-size: 0.8rem;
   letter-spacing: 0.2em;
-  color: #6B635A;
+  color: var(--gold);
+  opacity: 0.65;
   z-index: 10;
 }
 
@@ -115,6 +120,8 @@ p {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  border: 2px solid rgba(197, 162, 111, 0.55);
+  box-sizing: border-box;
 }
 .kenburns img {
   position: absolute;
@@ -207,8 +214,8 @@ p {
 <div id="scene-7" class="scene" style="background-image: url('assets/06-sunflowers.jpg')">
   <div class="content">
     <p style="font-size: 1.2rem; line-height: 1.75;">It's time to celebrate you because you are a beacon of light for the people in your life. You're kind, sweet, a hard worker, and a great human being. And, oh! 26 looks great on you.</p>
-    <p style="font-size: 1.8rem; font-family: 'Playfair Display', Georgia, serif; margin-top: 32px; color: var(--cream);">Happy Birthday, Kristen!</p>
-    <p style="margin-top:32px; font-size:1rem; color:#A89A85;">~ Paotie</p>
+    <p style="font-size: 2rem; font-family: 'Playfair Display', Georgia, serif; margin-top: 32px; color: var(--gold); letter-spacing: 0.02em; text-shadow: 0 2px 18px rgba(0,0,0,0.6);">Happy Birthday, Kristen!</p>
+    <p style="margin-top:36px; font-size:1.7rem; color: var(--gold); font-family: 'Dancing Script', cursive; opacity: 0.9;">~ Paotie</p>
   </div>
 </div>
 

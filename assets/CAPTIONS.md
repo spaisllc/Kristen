@@ -10,6 +10,9 @@ Source: Paotie supplied 2026-06-24. Six photos delivered. Builder picks which fi
 | `04-grandma.jpg` | Kristen + her grandmother in a backyard, Kristen still in the BIRTHDAY sash | **Family / About section** — warmth, multigenerational |
 | `05-pines.jpg` | Kristen + a younger sibling in pine trees (very Colorado) | **Adventures / outdoor moment** |
 | `06-sunflowers.jpg` | Kristen + her mom at a sunflower farm, both holding bouquets, big blue sky | **Sponsorships / "brand collab" mock** — feels like an authentic creator-merch shot |
+| `07-smile-selfie.jpg` | Close-up car-window selfie. Kristen, blonde wavy hair, winking + huge open-mouth smile, nose ring, brown sweater. Solo. | **Opener / first impression** — anonymous-feeling, joy-forward, no birthday context |
+| `08-spritz-friend.jpg` | Kristen in BIRTHDAY QUEEN sash with one friend in front of the "Just a Spritz Older" banner. Party scene with gold balloons + Aperol bottles. | **Friends collage** — pair with `09-friends-group.jpg` |
+| `09-friends-group.jpg` | Group selfie outside, ~6 people (friends + younger kids) all laughing, sunny backyard, drinks. | **Friends collage** — pair with `08-spritz-friend.jpg` |
 
 ## Key facts these photos confirm
 

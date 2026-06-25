@@ -213,7 +213,7 @@ p {
 <div class="progress"><span id="progress-text">1 / 7</span></div>
 
 <iframe id="allStarPlayer"
-        src="about:blank"
+        src="https://www.youtube.com/embed/L_jWHffIx5E?enablejsapi=1&autoplay=1&mute=1&start=0&end=18&controls=0&modestbranding=1&playsinline=1&playlist=L_jWHffIx5E&loop=1"
         frameborder="0"
         allow="autoplay; encrypted-media"
         style="position: fixed; bottom: 0; right: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; border: 0;"></iframe>
@@ -226,9 +226,12 @@ function startMusic() {
   if (musicStarted) return;
   musicStarted = true;
   const player = document.getElementById('allStarPlayer');
-  if (player) {
-    player.src = "https://www.youtube.com/embed/L_jWHffIx5E?start=0&end=15&autoplay=1";
-  }
+  if (!player || !player.contentWindow) return;
+  // Pre-loaded muted+autoplaying. Now unmute + seek + play, all in the user-gesture window.
+  player.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+  player.contentWindow.postMessage('{"event":"command","func":"setVolume","args":[100]}', '*');
+  player.contentWindow.postMessage('{"event":"command","func":"seekTo","args":[0, true]}', '*');
+  player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
 }
 
 function nextScene() {

@@ -75,6 +75,41 @@ p {
   text-shadow: 0 1px 8px rgba(0,0,0,0.55);
 }
 .hint:hover { color: var(--spritz); }
+
+.oakley-pill {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.82rem;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(248, 244, 236, 0.12);
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(197, 162, 111, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition: all .3s ease;
+  z-index: 50;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+.oakley-pill:hover {
+  background: rgba(248, 244, 236, 0.22);
+  border-color: var(--gold);
+  color: var(--spritz);
+  transform: translateX(-50%) translateY(-1px);
+}
+.oakley-pill:focus-visible { outline: 2px solid var(--spritz); outline-offset: 4px; }
+.oakley-pill .paw { margin-right: 6px; font-size: 1rem; vertical-align: -1px; }
+@media (max-width: 720px) {
+  .oakley-pill { top: 16px; font-size: 0.7rem; padding: 8px 16px; letter-spacing: 0.14em; }
+}
+
+
 .progress {
   position: fixed;
   bottom: 40px;
@@ -143,6 +178,8 @@ p {
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:wght@400;500&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<a class="oakley-pill" href="oakley.html" aria-label="Visit Oakley's brand site"><span class="paw" aria-hidden="true">🐾</span>Oakley's site</a>
 
 <!-- Scene 1: NEW opener -->
 <div id="scene-1" class="scene active" style="background-image: url('assets/07-smile-selfie.jpg')">
@@ -311,6 +348,7 @@ document.addEventListener('keydown', (e) => {
 
 // Click anywhere on active scene also advances
 document.addEventListener('click', (e) => {
+  if (e.target.closest('.oakley-pill')) return;
   if (!e.target.classList.contains('hint')) {
     const active = document.querySelector('.scene.active');
     if (active) nextScene();
